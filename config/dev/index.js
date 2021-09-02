@@ -1,4 +1,4 @@
-"use-strict";
+"use strict";
 
 const devConfig = {
   env: process.env.NODE_ENV,

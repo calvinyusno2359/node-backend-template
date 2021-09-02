@@ -1,4 +1,4 @@
-"use-strict";
+"use strict";
 
 const testConfig = {
   env: process.env.NODE_ENV,
