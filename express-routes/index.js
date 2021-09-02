@@ -1,9 +1,8 @@
 "use-strict";
 
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 
-router.get("/", (req, res) => {
+router.get("/api", (req, res) => {
   console.log("hello world");
   res.send("hello world");
 });

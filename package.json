@@ -10,7 +10,7 @@
   "name": "node-backend-template",
   "description": "Template for a node backend",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "npm test"
   },
