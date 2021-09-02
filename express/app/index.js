@@ -3,16 +3,9 @@
 const express = require("express");
 const cors = require("cors");
 
+const { jsonOptions, urlencodedOptions } = require("../../config").app;
+
 const app = new express();
-
-const jsonOptions = {
-  limit: "5mb",
-};
-
-const urlencodedOptions = {
-  extended: true,
-  limit: "5mb",
-};
 
 app.use(express.json(jsonOptions));
 app.use(express.urlencoded(urlencodedOptions));
