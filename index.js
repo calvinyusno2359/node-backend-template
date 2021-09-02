@@ -7,7 +7,7 @@ const router = require("./express-routes");
 
 const { PORT, NODE_ENV } = process.env;
 
-app.use(router);
+app.use("/api", router);
 
 app.listen(PORT, () => {
   console.log(`Listening to port: ${PORT} (${NODE_ENV})`);
