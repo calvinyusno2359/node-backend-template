@@ -1,6 +1,6 @@
 "use strict";
 
-const getUser = require("./getUser");
+const userService = require("../../../services/user");
 
 const users = {};
 

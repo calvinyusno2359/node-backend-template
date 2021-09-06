@@ -35,5 +35,5 @@ module.exports = {
   init,
   synch,
   sequelize,
-  ...models,
+  models,
 };
