@@ -1,9 +1,7 @@
 "use strict";
 
-const createUser = require("./createUser");
-const readUser = require("./getUser");
+const userService = require("./user");
 
 module.exports = {
-  createUser,
-  getUser,
+  userService,
 };

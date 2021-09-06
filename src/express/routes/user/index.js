@@ -1,7 +1,20 @@
 "use strict";
 
-const userService = require("../../../services/user");
+const { userService } = require("../../../services");
 
-const users = {};
+async function signUp(req, res, next) {
+  const user = await userService.createUser(req.body);
+  return res.json({ user });
+}
 
-module.exports = users;
+async function logIn(req, res, next) {
+  const user = await userService.getUser(req.body);
+  return res.json({ user });
+}
+
+const userController = {
+  signUp,
+  logIn,
+};
+
+module.exports = userController;
