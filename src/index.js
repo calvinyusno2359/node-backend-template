@@ -11,6 +11,7 @@ const { PORT, NODE_ENV } = process.env;
 app.listen(PORT, () => {
   console.log(config);
   db.init();
+  db.synch();
 
   console.log(`Listening to port: ${PORT} (${NODE_ENV})`);
 });

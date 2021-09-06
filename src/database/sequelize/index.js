@@ -1,6 +1,11 @@
 "use strict";
 
+const Sequelize = require("sequelize");
+
 const sequelize = require("./connection");
+const models = require("./models")(sequelize, Sequelize);
+
+const { syncOptions } = require("../../config").db;
 
 async function init() {
   try {
@@ -8,6 +13,15 @@ async function init() {
     console.log("Successfully established connection to MySQL.");
   } catch (err) {
     console.log("Error. Unable to Connect to MySQL:", err);
+  }
+}
+
+async function synch() {
+  try {
+    await sequelize.sync(syncOptions);
+    console.log("Successfully established connection to MySQL.");
+  } catch (err) {
+    console.log("Error. Unable to Sync to MySQL:", err);
   }
 }
 
@@ -19,5 +33,7 @@ async function shutdown() {
 
 module.exports = {
   init,
+  synch,
   sequelize,
+  ...models,
 };

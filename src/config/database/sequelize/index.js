@@ -1,7 +1,14 @@
 "use strict";
 
-const { DB_DIALECT, DB_HOST, DB_PORT, DB_USERNAME, DB_PASSWORD, DB_DATABASE } =
-  process.env;
+const {
+  DB_DIALECT,
+  DB_HOST,
+  DB_PORT,
+  DB_USERNAME,
+  DB_PASSWORD,
+  DB_DATABASE,
+  FORCE_SYNC,
+} = process.env;
 
 const sequelizeConnectionConfig = {
   dialect: DB_DIALECT,
@@ -14,6 +21,9 @@ const sequelizeConnectionConfig = {
 
 const dbConfig = {
   connection: sequelizeConnectionConfig,
+  syncOptions: {
+    force: FORCE_SYNC === "true",
+  },
 };
 
 module.exports = dbConfig;

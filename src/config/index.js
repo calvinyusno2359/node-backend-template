@@ -6,8 +6,8 @@ const dbConfig = require("./database/sequelize");
 const { NODE_ENV } = process.env;
 
 function useEnvConfig(env) {
-  if (env == "dev") return require("./dev");
-  if (env == "test") return require("./test");
+  if (env === "dev") return require("./dev");
+  if (env === "test") return require("./test");
 
   return require("./dev");
 }
