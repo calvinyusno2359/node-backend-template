@@ -3,11 +3,11 @@
 const Sequelize = require("sequelize");
 
 const { dialect, host, port, username, password, database } =
-  require("../../../config").sequelize;
+  require("../../../config").db.connection;
 
 const sequelize = new Sequelize({
   dialect: dialect,
-  host: host,
+  host: `/cloudsql/${instanceConnectionName}`,
   port: port,
   username: username,
   password: password,
