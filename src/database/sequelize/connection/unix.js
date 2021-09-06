@@ -2,16 +2,16 @@
 
 const Sequelize = require("sequelize");
 
-const { dialect, host, port, username, password, database } =
+const { host, dialect, username, password, database } =
   require("../../../config").db.connection;
 
-const sequelize = new Sequelize({
+// cloud sql uses UNIX connection through proxy instead of the regular TCP
+const sequelize = new Sequelize(database, username, password, {
+  host: `/cloudsql/${host}`, // instance_connection_string
   dialect: dialect,
-  host: `/cloudsql/${instanceConnectionName}`,
-  port: port,
-  username: username,
-  password: password,
-  database: database,
+  dialectOptions: {
+    socketPath: `/cloudsql/${host}`, // instance_connection_string
+  },
 });
 
 module.exports = sequelize;
