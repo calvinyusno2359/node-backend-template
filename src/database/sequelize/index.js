@@ -11,6 +11,12 @@ async function init() {
   }
 }
 
+// TODO: attach this handler to process.on("exit") or process.on("SIGTERM")
+async function shutdown() {
+  console.log("Closing connection to MySQL.");
+  await sequelize.close();
+}
+
 module.exports = {
   init,
   sequelize,
