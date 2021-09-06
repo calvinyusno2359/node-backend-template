@@ -4,12 +4,14 @@ const appConfig = require("./app");
 
 const { NODE_ENV } = process.env;
 
-let envConfig =
-  NODE_ENV == "dev"
-    ? require("./dev")
-    : NODE_ENV == "test"
-    ? require("./test")
-    : require("./dev");
+function useConfig(env) {
+  if (env == "dev") return require("./dev");
+  if (env == "test") return require("./test");
+
+  return require("./dev");
+}
+
+let envConfig = useConfig(NODE_ENV);
 
 const config = {
   ...envConfig,
