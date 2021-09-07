@@ -1,20 +1,11 @@
 "use strict";
 
-const { userService } = require("../../../services");
+const router = require("express").Router();
 
-async function signUp(req, res, next) {
-  const user = await userService.createUser(req.body);
-  return res.json({ user });
-}
+const { userController } = require("../../../api");
 
-async function logIn(req, res, next) {
-  const user = await userService.getUser(req.body);
-  return res.json({ user });
-}
+router.get("/:id", userController.logIn);
 
-const userController = {
-  signUp,
-  logIn,
-};
+router.post("/", userController.signUp);
 
-module.exports = userController;
+module.exports = router;
