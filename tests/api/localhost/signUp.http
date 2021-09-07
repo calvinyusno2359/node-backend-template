@@ -1,0 +1,8 @@
+// try sign up a user
+
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+    "name": "admin0"
+}

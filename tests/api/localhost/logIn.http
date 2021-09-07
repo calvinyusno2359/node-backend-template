@@ -1,0 +1,2 @@
+// try login as a user
+GET http://localhost:8080/api/users/1
