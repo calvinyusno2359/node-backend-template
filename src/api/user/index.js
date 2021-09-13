@@ -1,11 +1,8 @@
 "use strict";
 
-const signUp = require("./signUp");
-const logIn = require("./logIn");
-
 const userController = {
-  signUp,
-  logIn,
+  signUp: require("./signUp"),
+  logIn: require("./logIn"),
 };
 
 module.exports = userController;
