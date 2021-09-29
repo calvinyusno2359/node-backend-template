@@ -12,7 +12,7 @@
   "name": "node-backend-template",
   "description": "Template for a node backend",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "dist/app/index.js",
   "scripts": {
     "test": "npm test"
   },
