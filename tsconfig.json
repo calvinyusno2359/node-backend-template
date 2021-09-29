@@ -2,6 +2,22 @@
     "compilerOptions": {
         "target": "es2017",
         "watch": true,
+        "rootDir": "src",
         "outDir": "dist/app",
-    }
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "module": "commonjs",
+        "pretty": true,
+        "strict": true,
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+    "include": [
+        "./src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "test"
+    ],
 }
